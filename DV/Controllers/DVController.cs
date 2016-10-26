@@ -40,11 +40,11 @@ namespace NND.CA.DV.Web.Controllers
         /// to main project. Also added the unity container in the base controller as well as the screen name for initializtion proposes
         /// </summary>
         /// <param name="container"> Unity Container</param>
-        public FlowController(IUnityContainer container)
-            //: base(container, Common.Models.Enums.ScreenName.VisualProcessFlow)
-        {
+        //public FlowController(IUnityContainer container)
+        //    //: base(container, Common.Models.Enums.ScreenName.VisualProcessFlow)
+        //{
 
-        }
+        //}
         #endregion
         #region Initialization
         /// <summary>
@@ -82,7 +82,7 @@ namespace NND.CA.DV.Web.Controllers
             //{
             //    return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
             //}
-            return Content("Successfull VPF Prject Dependency Injection");
+            return Content("Successfull DV Prject Dependency Injection");
         }
         [System.Web.Mvc.HttpGet]
         public ActionResult AP(string id)

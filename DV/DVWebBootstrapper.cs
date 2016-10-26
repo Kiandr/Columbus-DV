@@ -2,9 +2,9 @@
 
 #region Namespace
 using Microsoft.Practices.Unity;
-//using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
-//using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
-//using Sage.CA.SBS.ERP.Sage300.VPF.Models;
+using Sage.CA.SBS.ERP.Sage300.Common.Interfaces.Bootstrap;
+using Sage.CA.SBS.ERP.Sage300.Common.Utilities;
+using NND.CA.DV.Models;
 using NND.CA.DV.Web.Controllers;
 using System.ComponentModel.Composition;
 using System.Web.Mvc;
@@ -17,7 +17,7 @@ namespace NND.CA.DV.Web
     /// </summary>
     //[Export(typeof(IBootstrapperTask))]
     //[BootstrapMetadataExport(BootstrapModule.VPF, new[] { BootstrapAppliesTo.Web }, 40)]
-    public class DVWebBootstrapper //: IBootstrapperTask
+    public class DVWebBootstrapper : IBootstrapperTask
     {
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace NND.CA.DV.Web
         private static void RegisterController(IUnityContainer container)
         {
             // Main Controller, accessible via {tenant}/VPF/Flow/Index/{id}
-            //UnityUtil.RegisterType<IController, FlowController<Flow>>(container, "Flow");
+            UnityUtil.RegisterType<IController, DVController<DVModel>>(container, "DV");
         }
         #endregion
     }

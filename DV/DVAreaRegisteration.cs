@@ -1,16 +1,16 @@
 ﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
-using Sage.CA.SBS.ERP.Sage300.VPF.Web;
+using NND.CA.DV.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 
-namespace NND.CA.DV.Web.Areas.VPF
+namespace NND.CA.DV.Web.Areas.DV
 {
 
     /// <summary>
     /// Area Registeration Visual Process Flow
     /// </summary>
-    public class VPFAreaRegistration : AreaRegistration
+    public class DVAreaRegistration : AreaRegistration
     {
         /// <summary>
         /// Area identifier for visual process flow. 
