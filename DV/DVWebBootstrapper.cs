@@ -28,7 +28,7 @@ namespace NND.CA.DV.Web
         public void Execute(IUnityContainer container)
         {
             // Definition of the Controller class to avoid confusion, controllers were separated into the particular class "RegisterController". 
-            //RegisterController(container);
+            RegisterController(container);
         }
 
         #region Register Controller Project
