@@ -9,9 +9,10 @@ using System.Web.Routing;
 //using Sage.CA.SBS.ERP.Sage300.VPF.Resources.Services;
 //using Sage.CA.SBS.ERP.Sage300.VPF.Interfaces.Services;
 //using Sage.CA.SBS.ERP.Sage300.VPF.Models;
-//using Sage.CA.SBS.ERP.Sage300.Common.Web;
+using Sage.CA.SBS.ERP.Sage300.Common.Web;
 //using Sage.CA.SBS.ERP.Sage300.Common.Resources;
 //using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
+using NND.CA.DV.Models;
 using NND.CA.DV.Web.Constants;
 #endregion
 
@@ -23,16 +24,17 @@ namespace NND.CA.DV.Web.Controllers
     /// Main Controller for Visual Process Flow
     /// </summary>
     /// <typeparam name="T">Flow Model</typeparam>
-    public class DVController: Controller
-    { 
-    //    MultitenantControllerBase<Flow> where T : Flow, new()
-    //{
+    //public class DVController: Controller
+    public class DVController<T> : BaseController<DVModel> where T : DVModel, new()
+    {
+        //    MultitenantControllerBase<Flow> where T : Flow, new()
+        //{
 
-    //    #region Private Varibles
-    //    /// <summary>
-    //    /// IFlow Interface, containing the Get implementation  for Visual Process Flow object acquistion
-    //    /// </summary>
-    //    private IFlowEntityService<T> Service;
+        //    #region Private Varibles
+        //    /// <summary>
+        //    /// IFlow Interface, containing the Get implementation  for Visual Process Flow object acquistion
+        //    /// </summary>
+        //    private IFlowEntityService<T> Service;
         //#endregion
         #region Constructor
         /// <summary>
@@ -40,30 +42,31 @@ namespace NND.CA.DV.Web.Controllers
         /// to main project. Also added the unity container in the base controller as well as the screen name for initializtion proposes
         /// </summary>
         /// <param name="container"> Unity Container</param>
-        //public FlowController(IUnityContainer container)
-        //    //: base(container, Common.Models.Enums.ScreenName.VisualProcessFlow)
-        //{
+        public DVController(IUnityContainer container)
+        //: base(container, Common.Models.Enums.ScreenName.VisualProcessFlow)
+        {
 
-        //}
+        }
         #endregion
         #region Initialization
         /// <summary>
         /// Override Initialize method the main controller requesting the context 
         /// </summary>
         ///// <param name="requestContext">Request Context</param>
-        //protected override void Initialize(RequestContext requestContext)
-        //{
-        //    base.Initialize(requestContext);
-        //    Service = Context.Container.Resolve<IFlowEntityService<T>>((new ParameterOverride("context", Context)));
+        protected override void Initialize(RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+            //Service = Context.Container.Resolve<IFlowEntityService<T>>((new ParameterOverride("context", Context)));
 
-        //}
+        }
         #endregion
         #region Public Actions
         /// <summary>
         /// Get visual Process Flow Per MenuId
         /// </summary>  
-        /// <param name="id"> The object identifier </param>
+        /// <param name = "id" > The object identifier</param>
         /// <returns>Flow object containing the Visual Process Flow in a model</returns>
+
         [System.Web.Mvc.HttpGet]
         public ActionResult Index(string id)
         {
@@ -77,18 +80,19 @@ namespace NND.CA.DV.Web.Controllers
 
             //    return View(viewFilePath);
             //}
-
+            int a = 0;
+            a = a + 1;
             //catch (BusinessException businessException)
             //{
             //    return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
             //}
             return Content("Successfull DV Prject Dependency Injection");
         }
-        [System.Web.Mvc.HttpGet]
-        public ActionResult AP(string id)
-        {
-            return View();
-        }
-            #endregion
-        }
+        //[System.Web.Mvc.HttpGet]
+        //public ActionResult AP(string id)
+        //{
+        //    return View();
+        //}
+        #endregion
+    }
 }

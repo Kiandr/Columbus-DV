@@ -15,8 +15,9 @@ namespace NND.CA.DV.Web
     /// <summary>
     /// Administrative Bootstrapper Class
     /// </summary>
-    //[Export(typeof(IBootstrapperTask))]
-    //[BootstrapMetadataExport(BootstrapModule.VPF, new[] { BootstrapAppliesTo.Web }, 40)]
+    [Export(typeof(IBootstrapperTask))]
+    [BootstrapMetadataExport("DV",
+        new[] { BootstrapAppliesTo.Web, BootstrapAppliesTo.Worker, BootstrapAppliesTo.WebApi }, 10)]
     public class DVWebBootstrapper : IBootstrapperTask
     {
 
@@ -27,7 +28,7 @@ namespace NND.CA.DV.Web
         public void Execute(IUnityContainer container)
         {
             // Definition of the Controller class to avoid confusion, controllers were separated into the particular class "RegisterController". 
-            RegisterController(container);
+            //RegisterController(container);
         }
 
         #region Register Controller Project
@@ -40,7 +41,7 @@ namespace NND.CA.DV.Web
         private static void RegisterController(IUnityContainer container)
         {
             // Main Controller, accessible via {tenant}/VPF/Flow/Index/{id}
-            UnityUtil.RegisterType<IController, DVController<DVModel>>(container, "DV");
+            UnityUtil.RegisterType<IController, DVController < DVModel >>(container, "DV");
         }
         #endregion
     }
