@@ -64,27 +64,28 @@ namespace NND.CA.DV.Web.Controllers
         /// <param name = "id" > The object identifier</param>
         /// <returns>Flow object containing the Visual Process Flow in a model</returns>
 
-        [System.Web.Mvc.HttpGet]
-        public ActionResult Index(string id)
-        {
-            try
-            {
-                var viewFilePath = string.Format("~/Areas/DV/Views/DV/Index.cshtml", id);
-                if (!System.IO.File.Exists(Server.MapPath(viewFilePath)))
-                {
-                    return HttpNotFound();
-                }
+        //[System.Web.Mvc.HttpGet]
+        //public ActionResult Index(string id)
+        //{
+        //    //try
+        //    //{
+        //    //    var viewFilePath = string.Format("~/Areas/DV/Views/DV/Index.cshtml", id);
+        //    //    if (!System.IO.File.Exists(Server.MapPath(viewFilePath)))
+        //    //    {
+        //    //        return HttpNotFound();
+        //    //    }
 
-                return View(viewFilePath);
-            }
+        //    //    return View(viewFilePath);
+        //    //}
 
-            catch (BusinessException businessException)
-            {
-                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
-            }
+        //    //catch (BusinessException businessException)
+        //    //{
+        //    //    return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
+        //    //}
 
-            return PartialView(DvIndexPartialViewPath);
-        }
+        //    //return PartialView(DvIndexPartialViewPath);
+        //    return (id);
+        //}
         //[System.Web.Mvc.HttpGet]
         //public ActionResult AP(string id)
         //{
