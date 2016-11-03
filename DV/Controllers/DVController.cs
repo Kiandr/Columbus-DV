@@ -67,6 +67,7 @@ namespace NND.CA.DV.Web.Controllers
         //[System.Web.Mvc.HttpGet]
         //public ActionResult Index(string id)
         //{
+
         //    try
         //    {
         //        var viewFilePath = string.Format("~/Areas/DV/Views/DV/Index.cshtml", id);
@@ -84,6 +85,26 @@ namespace NND.CA.DV.Web.Controllers
         //    }
 
         //    return PartialView(DvIndexPartialViewPath);
+
+        //    //try
+        //    //{
+        //    //    var viewFilePath = string.Format("~/Areas/DV/Views/DV/Index.cshtml", id);
+        //    //    if (!System.IO.File.Exists(Server.MapPath(viewFilePath)))
+        //    //    {
+        //    //        return HttpNotFound();
+        //    //    }
+
+        //    //    return View(viewFilePath);
+        //    //}
+
+        //    //catch (BusinessException businessException)
+        //    //{
+        //    //    return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
+        //    //}
+
+        //    //return PartialView(DvIndexPartialViewPath);
+        //    return (id);
+
         //}
         //[System.Web.Mvc.HttpGet]
         //public ActionResult AP(string id)
