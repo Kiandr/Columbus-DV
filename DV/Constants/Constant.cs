@@ -17,7 +17,7 @@ namespace NND.CA.DV.Web.Constants
         /// <summary>
         /// Location of the partial view in the main web project
         /// </summary>
-        public const string VpfScreen = "~/Areas/VPF/Views/Flow/Partials/_ViewMode.cshtml";
+        public const string DvIndexPartialViewPath = "~/Areas/DV/Views/Partials/_DvIndexPartialViewPath.cshtml";
         /// <summary>
         /// Location of Index cshtml in the main web project
         /// </summary>

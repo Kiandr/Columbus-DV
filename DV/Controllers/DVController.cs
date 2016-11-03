@@ -15,9 +15,6 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web;
 using NND.CA.DV.Models;
 using NND.CA.DV.Web.Constants;
 #endregion
-
-
-
 namespace NND.CA.DV.Web.Controllers
 {
     /// <summary>
@@ -70,23 +67,23 @@ namespace NND.CA.DV.Web.Controllers
         [System.Web.Mvc.HttpGet]
         public ActionResult Index(string id)
         {
-            //try
-            //{
-            //    var viewFilePath = string.Format("~/Areas/VPF/Views/Flow/{0}.cshtml", id);
-            //    if (!System.IO.File.Exists(Server.MapPath(viewFilePath)))
-            //    {
-            //        return HttpNotFound();
-            //    }
+            try
+            {
+                var viewFilePath = string.Format("~/Areas/DV/Views/DV/Index.cshtml", id);
+                if (!System.IO.File.Exists(Server.MapPath(viewFilePath)))
+                {
+                    return HttpNotFound();
+                }
 
-            //    return View(viewFilePath);
-            //}
-            int a = 0;
-            a = a + 1;
-            //catch (BusinessException businessException)
-            //{
-            //    return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
-            //}
-            return Content("Successfull DV Prject Dependency Injection");
+                return View(viewFilePath);
+            }
+
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
+            }
+
+            return PartialView(DvIndexPartialViewPath);
         }
         //[System.Web.Mvc.HttpGet]
         //public ActionResult AP(string id)
