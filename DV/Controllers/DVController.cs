@@ -1,7 +1,7 @@
-﻿﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
+﻿/* Copyright (c) 2016 KDR Software, Inc.  All rights reserved. */
 
 #region Namespace
-
+using System;
 using System.IO;
 using System.Web.Mvc;
 using Microsoft.Practices.Unity;
@@ -62,55 +62,13 @@ namespace NND.CA.DV.Web.Controllers
         /// Get visual Process Flow Per MenuId
         /// </summary>  
         /// <param name = "id" > The object identifier</param>
-        /// <returns>Flow object containing the Visual Process Flow in a model</returns>
+        /// <returns>DV object containing DV model</returns>
 
-        //[System.Web.Mvc.HttpGet]
-        //public ActionResult Index(string id)
-        //{
-
-        //    try
-        //    {
-        //        var viewFilePath = string.Format("~/Areas/DV/Views/DV/Index.cshtml", id);
-        //        if (!System.IO.File.Exists(Server.MapPath(viewFilePath)))
-        //        {
-        //            return HttpNotFound();
-        //        }
-
-        //        return View(viewFilePath);
-        //    }
-
-        //    catch (BusinessException businessException)
-        //    {
-        //        return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
-        //    }
-
-        //    return PartialView(DvIndexPartialViewPath);
-
-        //    //try
-        //    //{
-        //    //    var viewFilePath = string.Format("~/Areas/DV/Views/DV/Index.cshtml", id);
-        //    //    if (!System.IO.File.Exists(Server.MapPath(viewFilePath)))
-        //    //    {
-        //    //        return HttpNotFound();
-        //    //    }
-
-        //    //    return View(viewFilePath);
-        //    //}
-
-        //    //catch (BusinessException businessException)
-        //    //{
-        //    //    return JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException, FlowResx.VisualProcess));
-        //    //}
-
-        //    //return PartialView(DvIndexPartialViewPath);
-        //    return (id);
-
-        //}
-        //[System.Web.Mvc.HttpGet]
-        //public ActionResult AP(string id)
-        //{
-        //    return View();
-        //}
+        [System.Web.Mvc.HttpGet]
+        public ActionResult Index(string id)
+        {
+            return Json(new { success = true, Data = System.DateTime.Today }, JsonRequestBehavior.AllowGet);
+        }
         #endregion
     }
 }
