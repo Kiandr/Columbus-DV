@@ -4,7 +4,7 @@ namespace NND.CA.DV.Web.Constants
     /// <summary>
     /// Cosntant container of the Visual Process Flow Web project. This container will serve all internal varibles used in the controller. 
     /// </summary>
-    public class Constant
+    public class DvConstant
     {
         /// <summary>
         /// Physical path to the xml container of visual process flow on the server
