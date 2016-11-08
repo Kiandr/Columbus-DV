@@ -1,5 +1,10 @@
 ﻿/* Copyright (c) 2016 KDR Software, Inc.  All rights reserved. */
-
+#region
+/*
+ To do list: 
+ 1- Base models for Service API and Business Repo API. Standard operations 
+ */
+#endregion
 #region Namespace
 using System;
 using System.IO;
@@ -67,6 +72,12 @@ namespace NND.CA.DV.Web.Controllers
         [System.Web.Mvc.HttpGet]
         public ActionResult Index(string id)
         {
+            // get the id
+            // inquery id number from the data base and return the whole data structure that contains the data for the landing page. 
+            // Build the data model
+            // Build a view 
+            // Build a javascript structure that contains the same data model as the back end. 
+
             return Json(new { success = true, Data = System.DateTime.Today }, JsonRequestBehavior.AllowGet);
         }
         #endregion

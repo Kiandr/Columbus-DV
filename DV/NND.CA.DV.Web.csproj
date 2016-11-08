@@ -204,19 +204,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\DV\AP.cshtml" />
-    <Content Include="Views\DV\AR.cshtml" />
-    <Content Include="Views\DV\BK.cshtml" />
-    <Content Include="Views\DV\GL.cshtml" />
-    <Content Include="Views\DV\OE.cshtml" />
-    <Content Include="Views\DV\PO.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\DV\IC.cshtml" />
-    <Content Include="Views\DV\ICMaint.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="Views\DV\DV.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -238,6 +227,7 @@
       <Name>NND.CA.DV.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
