@@ -1,5 +1,5 @@
 ﻿/* Copyright (c) 2016 KDR Software, Inc.  All rights reserved. */
-#region
+#region Protocols to be implemented in this class
 /*
  To do list: 
  1- Base models for Service API and Business Repo API. Standard operations 
@@ -78,7 +78,8 @@ namespace NND.CA.DV.Web.Controllers
             // Build a view 
             // Build a javascript structure that contains the same data model as the back end. 
 
-            return Json(new { success = true, Data = System.DateTime.Today }, JsonRequestBehavior.AllowGet);
+            //return Json(new { success = true, Data = System.DateTime.Today }, JsonRequestBehavior.AllowGet); NOv8th2016
+            return PartialView(DvConstant.DvIndexPartialViewPath);
         }
         #endregion
     }
