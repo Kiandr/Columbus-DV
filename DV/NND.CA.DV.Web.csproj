@@ -207,6 +207,7 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="Views\Partials\_DvGrid.cshtml" />
+    <Content Include="Views\Partials\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -222,6 +223,10 @@
     <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Utilities\Sage.CA.SBS.ERP.Sage300.Common.Utilities.csproj">
       <Project>{9ce25370-dc66-4d61-87b4-aed9a3dc7bd4}</Project>
       <Name>Sage.CA.SBS.ERP.Sage300.Common.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Web\NND.CA.Common.Web.csproj">
+      <Project>{7e1a2f26-8e5c-4e72-890c-6d72e535db7e}</Project>
+      <Name>NND.CA.Common.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\NND.CA.DV.Models\NND.CA.DV.Models.csproj">
       <Project>{c8e1eca7-e38a-48f4-9b3b-2707963f1bb1}</Project>
