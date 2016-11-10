@@ -41,7 +41,7 @@ namespace NND.CA.DV.Web
         private static void RegisterController(IUnityContainer container)
         {
             // Main Controller, accessible via {tenant}/VPF/Flow/Index/{id}
-            UnityUtil.RegisterType<IController, DVController < DVModel >>(container, "DV");
+            UnityUtil.RegisterType<IController, DvController < DVModel >>(container, "DV");
         }
         #endregion
     }

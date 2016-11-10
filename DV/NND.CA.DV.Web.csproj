@@ -206,7 +206,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
-    <Content Include="Views\Partials\_DvGrid.cshtml" />
+    <Content Include="Views\Partials\Partials\_DvGrid.cshtml" />
     <Content Include="Views\Partials\Index.cshtml" />
     <Content Include="Scripts\NND.CA.DV.KoExtn.js" />
     <Content Include="Scripts\NND.CA.DV.Repository.js" />
