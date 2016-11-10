@@ -7,8 +7,8 @@
     <ProjectGuid>{C8E1ECA7-E38A-48F4-9B3B-2707963F1BB1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sage.CA.SBS.ERP.Sage300.VPF.Models</RootNamespace>
-    <AssemblyName>Sage.CA.SBS.ERP.Sage300.VPF.Models</AssemblyName>
+    <RootNamespace>NND.CA.DV.Models</RootNamespace>
+    <AssemblyName>NND.CA.DV.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -36,10 +36,30 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ScoreCard\Customers.cs" />
+    <Compile Include="ScoreCard\CustomerServices.cs" />
     <Compile Include="DVModel.cs" />
+    <Compile Include="ScoreCard\Employees.cs" />
+    <Compile Include="ScoreCard\Financial.cs" />
+    <Compile Include="ScoreCard\FiscalMonth.cs" />
+    <Compile Include="ScoreCard\Locations.cs" />
+    <Compile Include="ScoreCard\Marketing.cs" />
+    <Compile Include="ScoreCard\MonthAndDate.cs" />
+    <Compile Include="ScoreCard\MultiUnitReporting.cs" />
+    <Compile Include="ScoreCard\ProfitAndLoss.cs" />
+    <Compile Include="ScoreCard\Recruiting.cs" />
+    <Compile Include="ScoreCard\Reporting.cs" />
+    <Compile Include="ScoreCard\ScoreCardDv.cs" />
+    <Compile Include="ScoreCard\ScoreCardElements.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
+      <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

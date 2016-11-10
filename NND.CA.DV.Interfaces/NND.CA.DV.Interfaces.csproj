@@ -42,6 +42,16 @@
     <Compile Include="BusinessRepository\IDvEntity.cs" />
     <Compile Include="Services\IDvEntityService.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
+      <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
+      <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NND.CA.DV.Models\NND.CA.DV.Models.csproj">
+      <Project>{c8e1eca7-e38a-48f4-9b3b-2707963f1bb1}</Project>
+      <Name>NND.CA.DV.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

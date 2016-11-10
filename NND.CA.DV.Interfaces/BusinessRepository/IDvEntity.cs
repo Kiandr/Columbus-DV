@@ -8,5 +8,6 @@ namespace NND.CA.DV.Interfaces.BusinessRepository
 {
     class IDvEntity
     {
+       
     }
 }

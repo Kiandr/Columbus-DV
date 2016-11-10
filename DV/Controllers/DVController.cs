@@ -19,6 +19,7 @@ using Sage.CA.SBS.ERP.Sage300.Common.Web;
 //using Sage.CA.SBS.ERP.Sage300.Common.Exceptions;
 using NND.CA.DV.Models;
 using NND.CA.DV.Web.Constants;
+using NND.CA.Common.Web;
 #endregion
 namespace NND.CA.DV.Web.Controllers
 {
@@ -69,17 +70,144 @@ namespace NND.CA.DV.Web.Controllers
         /// <param name = "id" > The object identifier</param>
         /// <returns>DV object containing DV model</returns>
 
-        [System.Web.Mvc.HttpGet]
-        public ActionResult Index(string id)
-        {
-            // get the id
-            // inquery id number from the data base and return the whole data structure that contains the data for the landing page. 
-            // Build the data model
-            // Build a view 
-            // Build a javascript structure that contains the same data model as the back end. 
 
-            //return Json(new { success = true, Data = System.DateTime.Today }, JsonRequestBehavior.AllowGet); NOv8th2016
-            return PartialView(DvConstant.DvIndexPartialViewPath);
+        /// <summary>
+        /// Load Account set screen
+        /// </summary>
+        /// <returns>Account set View</returns>
+        public virtual ActionResult Index(string id)
+        {
+            AccountSetViewModel<T> model;
+            try
+            {
+                if (!string.IsNullOrEmpty(id))
+                {
+                    model = ControllerInternal.Get(id);
+                    model.UserAccess = ControllerInternal.GetAccessRights();
+                }
+                else
+                {
+                    model = new AccountSetViewModel<T> { UserAccess = ControllerInternal.GetAccessRights() };
+                    model = ControllerInternal.LoadCompanyDetails(model);
+
+                }
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
+                AccountSetsResx.AccountSetCode));
+            }
+
+            return View(model);
+        }
+
+        /// <summary>
+        /// Get Account set
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <returns>Json object for Account set</returns>
+        [HttpPost]
+        public virtual JsonNetResult Get(string id)
+        {
+            ViewModelBase<AccountSetViewModel<T>> viewModel;
+
+            if (!ValidateModelState(ModelState, out viewModel))
+            {
+                return JsonNet(viewModel);
+            }
+            try
+            {
+                if (!string.IsNullOrEmpty(id))
+                {
+                    return JsonNet(ControllerInternal.Get(id));
+                }
+                var accountSetcodes = new AccountSetViewModel<T>();
+                return JsonNet(accountSetcodes);
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.GetFailedMessage, businessException,
+              AccountSetsResx.AccountSetCode));
+            }
+        }
+
+        /// <summary>
+        /// Add new Account set
+        /// </summary>
+        /// <returns>Json object for Account set</returns>
+        /// <summary>
+        /// Create Account set
+        /// </summary>
+        /// <returns>AccountSetViewModel</returns>
+        [HttpPost]
+        public virtual JsonNetResult Create()
+        {
+            return JsonNet(ControllerInternal.Create());
+        }
+
+
+        /// <summary>
+        /// Update Account set
+        /// </summary>
+        /// <param name="model">Account set Model</param>
+        /// <returns>Json object for Account set</returns>
+        [HttpPost]
+        public virtual JsonNetResult Save(T model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+                return ValidateModelState(ModelState, out viewModel)
+                    ? JsonNet(ControllerInternal.Save(model))
+                    : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
+            }
+        }
+
+        /// <summary>
+        /// Update the status of the Account set
+        /// </summary>
+        /// <param name="model">model</param>
+        /// <returns>Json object for Account set</returns>
+        [HttpPost]
+        public virtual JsonNetResult UpdateStatus(T model)
+        {
+            try
+            {
+                ViewModelBase<ModelBase> viewModel;
+                return ValidateModelState(ModelState, out viewModel)
+                    ? JsonNet(ControllerInternal.UpdateStatus(model))
+                    : JsonNet(viewModel);
+            }
+            catch (BusinessException businessException)
+            {
+                return JsonNet(BuildErrorModelBase(CommonResx.SaveFailedMessage, businessException));
+            }
+        }
+
+        /// <summary>
+        /// Delete Account Set
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <returns>Json object for Account set</returns>
+        [HttpPost]
+        public virtual JsonNetResult Delete(string id)
+        {
+            try
+            {
+                return JsonNet(ControllerInternal.Delete(id));
+            }
+            catch (BusinessException businessException)
+            {
+                return
+                    JsonNet(BuildErrorModelBase(CommonResx.DeleteFailedMessage, businessException,
+                         AccountSetsResx.AccountSetCode));
+            }
         }
         #endregion
     }
