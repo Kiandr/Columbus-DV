@@ -56,6 +56,10 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\NND.CA.Common.Model\NND.CA.Common.Model.csproj">
+      <Project>{75a4ba46-805b-4bf3-ae8c-e0fac47fd517}</Project>
+      <Name>NND.CA.Common.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
       <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
       <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>

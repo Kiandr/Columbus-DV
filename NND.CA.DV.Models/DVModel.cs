@@ -3,7 +3,7 @@
 #region Namespace
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.BaseModels;
+
 #endregion
 
 namespace NND.CA.DV.Models
@@ -12,7 +12,7 @@ namespace NND.CA.DV.Models
     /// <summary>
     /// Base model for Visual Process Flow
     /// </summary>
-    public partial class DVModel : ModelBase
+    public partial class DVModel /*: ModelBase*/
     {
         /// <summary>
         /// id entity, which is being used to identify the visual process flow from template, usually it is in the following format:  1010 or 1111, 1112, etc.

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Sage.CA.SBS.ERP.Sage300.Common.Models.BaseModels;
-using NND.CA.DV.Models;
+﻿using NND.CA.DV.Models;
 
 
 namespace NND.CA.DV.Interfaces.Services
