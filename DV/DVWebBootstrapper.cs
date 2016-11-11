@@ -8,6 +8,8 @@ using NND.CA.DV.Models;
 using NND.CA.DV.Web.Controllers;
 using System.ComponentModel.Composition;
 using System.Web.Mvc;
+using NND.CA.DV.Models.ViewModels;
+
 #endregion
 
 namespace NND.CA.DV.Web
@@ -41,7 +43,7 @@ namespace NND.CA.DV.Web
         private static void RegisterController(IUnityContainer container)
         {
             // Main Controller, accessible via {tenant}/VPF/Flow/Index/{id}
-            UnityUtil.RegisterType<IController, DvController < DVModel >>(container, "DV");
+            UnityUtil.RegisterType<IController, DvController < DVModelViewModel<DVModel>>>(container, "DV");
         }
         #endregion
     }

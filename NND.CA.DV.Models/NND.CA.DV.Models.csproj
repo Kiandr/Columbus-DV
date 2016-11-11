@@ -51,6 +51,7 @@
     <Compile Include="ScoreCard\Reporting.cs" />
     <Compile Include="ScoreCard\ScoreCardDv.cs" />
     <Compile Include="ScoreCard\ScoreCardElements.cs" />
+    <Compile Include="ViewModels\DVModelViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

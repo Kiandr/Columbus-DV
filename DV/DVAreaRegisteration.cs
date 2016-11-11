@@ -40,7 +40,7 @@ namespace NND.CA.DV.Web.Areas.DV
         /// <param name="context">Context object</param>
         private void RegisterRoutes(AreaRegistrationContext context)
         {
-            context.MapRoute("Core_DV", url: "DV/{controller}/{action}/{id}", 
+            context.MapRoute("DV", url: "{Contoller}/{action}/{id}", 
                 defaults: new { area = "DV", controller = "DV", action = "Index", id = UrlParameter.Optional }, 
                 namespaces: new[] { "NND.CA.DV.Web.Controllers" });
 

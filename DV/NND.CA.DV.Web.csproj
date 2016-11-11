@@ -173,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\Constant.cs" />
+    <Compile Include="Controllers\ControllerInternal\DVControllerInternal.cs" />
     <Compile Include="Controllers\DVController.cs" />
     <Compile Include="DVAreaRegisteration.cs" />
     <Compile Include="DVBundleRegisteration.cs" />
@@ -218,6 +219,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\NND.CA.Common.Model\NND.CA.Common.Model.csproj">
+      <Project>{75a4ba46-805b-4bf3-ae8c-e0fac47fd517}</Project>
+      <Name>NND.CA.Common.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Columbus-Framework\Common\NND.CA.Common.Web\NND.CA.Common.Web.csproj">
       <Project>{7e1a2f26-8e5c-4e72-890c-6d72e535db7e}</Project>
       <Name>NND.CA.Common.Web</Name>
