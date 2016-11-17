@@ -55,12 +55,6 @@ namespace NND.CA.DV.Web.Controllers
         }
         #endregion
 
-
-
-
-
-
-
         #region Public Actions
         [HttpGet]
         public ActionResult Index(string id)
