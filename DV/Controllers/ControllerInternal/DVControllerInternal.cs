@@ -1,4 +1,5 @@
 ﻿using Microsoft.Practices.Unity;
+using NND.CA.Common.Model;
 using NND.CA.Common.Web;
 using NND.CA.DV.Interfaces.Services;
 using NND.CA.DV.Models;
@@ -15,9 +16,10 @@ namespace NND.CA.DV.Web.Controllers.ControllerInternal
         public DvControllerInternal(IUnityContainer ContainerInsideMultiTenant)
             : base(ContainerInsideMultiTenant)
         {
+            var testPar = new BaseModelContext() {Container =   ContainerInsideMultiTenant };
 
             ServicesInternalController =
-                ContainerInsideMultiTenant.Resolve<IDvEntityService<DVModelViewModel<DVModel>>>("IDvEntityService");
+                ContainerInsideMultiTenant.Resolve<IDvEntityService<DVModelViewModel<DVModel>>>("IDvEntityService", new ParameterOverride("BaseModelContextFromController", "testPar").OnType<BaseModelContext>());
         }
 
         #endregion

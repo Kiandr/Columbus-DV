@@ -19,6 +19,7 @@ namespace NND.CA.DV.Services
         {
             var dvEntityRepositoryLocal = BaseModelContextInBaseClassAtFlasService.Resolve<IDvEntityRepository<DVModelViewModel<DVModel>>>("IDvEntityRepository");
             //var modelRepo = new DVModelViewModel<DVModel>();
+         
            var results =  dvEntityRepositoryLocal.UpdateStatus(model);
             return (T) results;
             //return (T) BaseModelContextInBaseClassAtFlasService.Container.Resolve<IDvEntityRepository<DVModelViewModel<DVModel>>>("IDvEntityRepository").UpdateStatus(model);
