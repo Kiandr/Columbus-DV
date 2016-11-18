@@ -6,17 +6,18 @@ using NND.CA.DV.Models.ViewModels;
 
 namespace NND.CA.DV.Web.Controllers.ControllerInternal
 {
-    public class DvControllerInternal<T> : InternalControllerBase<T> where T : IDvEntityService<DVModelViewModel<DVModel>>, new()
+    public class DvControllerInternal<T> : InternalControllerBase<T> where T : DVModelViewModel<DVModel>, new()
     {
         //protected IDvEntityService<DVModelViewModel<DVModel>> ServicesInLayer;
-      
+        protected  new IDvEntityService<DVModelViewModel<DVModel>> ServicesInternalController;
         #region Constructor
 
         public DvControllerInternal(IUnityContainer ContainerInsideMultiTenant)
             : base(ContainerInsideMultiTenant)
         {
 
-            ServicesInternalController = ContainerInsideMultiTenant.Resolve<T>("IDvEntityService");
+            ServicesInternalController =
+                ContainerInsideMultiTenant.Resolve<IDvEntityService<DVModelViewModel<DVModel>>>("IDvEntityService");
         }
 
         #endregion
@@ -27,7 +28,7 @@ namespace NND.CA.DV.Web.Controllers.ControllerInternal
         {
             var model = new DVModelViewModel<DVModel>();
             ServicesInternalController.UpdateStatus(model);
-           
+
         }
 
         //public static implicit operator DvControllerInternal<T>(DvControllerInternal<DVModelViewModel<DVModel>> v)

@@ -24,7 +24,7 @@ namespace NND.CA.DV.Web.Controllers
     public class DvController<T> : MultitenantControllerBase<T> where T : DVModelViewModel<DVModel>, new()
     {
 
-        public T ControllerInternal { get; set; }
+        public DvControllerInternal<T> ControllerInternal { get; set; }
         //private IDvEntityService<T> service;
 
         #region Constructor
@@ -34,6 +34,7 @@ namespace NND.CA.DV.Web.Controllers
 
         {
             //UnityContainerMultiTenantClass = container;
+            ControllerInternal = new DvControllerInternal<T>(container);
         }
 
         #endregion
@@ -56,6 +57,7 @@ namespace NND.CA.DV.Web.Controllers
         {
             //var model = new T();
             //service.UpdateStatus(model);
+            ControllerInternal.Test();
             return PartialView(DvConstant.DvIndexPartialViewPath);
         }
 
