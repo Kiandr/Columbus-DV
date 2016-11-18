@@ -1,9 +1,10 @@
 ﻿using NND.CA.DV.Models;
+using NND.CA.DV.Models.ViewModels;
 
 
 namespace NND.CA.DV.Interfaces.Services
 {
-    public  interface IDvEntityService<T> where T: DVModel, new()
+    public  interface IDvEntityService<T> where T: DVModelViewModel<DVModel>, new()
     {
         /// <summary>
         /// Update the content of the T Mode, which is a DVModel

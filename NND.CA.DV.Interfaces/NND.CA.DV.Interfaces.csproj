@@ -39,10 +39,14 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessRepository\IDvEntity.cs" />
+    <Compile Include="BusinessRepository\IDvEntityRepository.cs" />
     <Compile Include="Services\IDvEntityService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\NND.CA.Common.Model\NND.CA.Common.Model.csproj">
+      <Project>{75A4BA46-805B-4BF3-AE8C-E0FAC47FD517}</Project>
+      <Name>NND.CA.Common.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Columbus-Framework\Common\Sage.CA.SBS.ERP.Sage300.Common.Models\Sage.CA.SBS.ERP.Sage300.Common.Models.csproj">
       <Project>{74ba53c3-eb09-4226-9985-bad7306db937}</Project>
       <Name>Sage.CA.SBS.ERP.Sage300.Common.Models</Name>

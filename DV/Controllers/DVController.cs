@@ -6,9 +6,11 @@ using System.Web.Routing;
 using Microsoft.Practices.Unity;
 using NND.CA.Common.Model;
 using NND.CA.Common.Web;
+using NND.CA.DV.Interfaces.Services;
 using NND.CA.DV.Models;
 using NND.CA.DV.Models.ViewModels;
 using NND.CA.DV.Web.Constants;
+using NND.CA.DV.Web.Controllers.ControllerInternal;
 
 #endregion
 
@@ -21,27 +23,22 @@ namespace NND.CA.DV.Web.Controllers
     //public class DVController: Controller
     public class DvController<T> : MultitenantControllerBase<T> where T : DVModelViewModel<DVModel>, new()
     {
+
+        public T ControllerInternal { get; set; }
+        //private IDvEntityService<T> service;
+
         #region Constructor
 
         public DvController(IUnityContainer container)
             : base(container, ScreenName.DV)
 
         {
+            //UnityContainerMultiTenantClass = container;
         }
 
         #endregion
 
         #region Initialize MultitenantControllerBase
-
-        /// <summary>
-        ///     Initializes the specified request context.
-        /// </summary>
-        /// <param name="requestContext">The request context.</param>
-        protected override void Initialize(RequestContext requestContext)
-        {
-            base.Initialize(requestContext);
-            //ControllerInternal = new DVControllerInternal<DVModelViewModel<DVModel>>(requestContext);
-        }
 
         #endregion
 
@@ -57,12 +54,16 @@ namespace NND.CA.DV.Web.Controllers
         [HttpGet]
         public ActionResult Index(string id)
         {
+            //var model = new T();
+            //service.UpdateStatus(model);
             return PartialView(DvConstant.DvIndexPartialViewPath);
         }
 
         [HttpGet]
         public virtual string Load(string id)
         {
+           
+
             return "rest";
 
             // var t = controllerInternal.load();

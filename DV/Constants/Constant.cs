@@ -17,7 +17,7 @@ namespace NND.CA.DV.Web.Constants
         /// <summary>
         /// Location of the partial view in the main web project
         /// </summary>
-        public const string DvIndexPartialViewPath = "~/Areas/DV/Views/Partials/Index.cshtml";
+        public const string DvIndexPartialViewPath = "~/Areas/DV/Views/DataVisualization/Index.cshtml";
         /// <summary>
         /// Location of Index cshtml in the main web project
         /// </summary>

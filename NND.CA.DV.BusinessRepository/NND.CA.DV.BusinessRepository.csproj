@@ -38,6 +38,27 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DvEntityRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\NND.CA.Common.Model\NND.CA.Common.Model.csproj">
+      <Project>{75A4BA46-805B-4BF3-AE8C-E0FAC47FD517}</Project>
+      <Name>NND.CA.Common.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Columbus-Framework\Common\NND.CA.Common.Web\NND.CA.Common.Web.csproj">
+      <Project>{7e1a2f26-8e5c-4e72-890c-6d72e535db7e}</Project>
+      <Name>NND.CA.Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NND.CA.DV.Interfaces\NND.CA.DV.Interfaces.csproj">
+      <Project>{1ED7E943-2B08-4FA5-BC63-9A21844752D5}</Project>
+      <Name>NND.CA.DV.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NND.CA.DV.Models\NND.CA.DV.Models.csproj">
+      <Project>{C8E1ECA7-E38A-48F4-9B3B-2707963F1BB1}</Project>
+      <Name>NND.CA.DV.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
