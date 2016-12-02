@@ -14,5 +14,21 @@ namespace NND.CA.DV.Interfaces.BusinessRepository
         /// <param name="model"> DVModelViewModel(DVModel)</param>
         /// <returns></returns>
         T UpdateStatus(T model);
+
+        /// <summary>
+        /// This is a routine call that is being initated to Procura, 
+        /// Feed the right data model
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="sqlQUery"></param>
+        /// <returns></returns>
+        T GetCallProcura(T model, string sqlQUery);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="sqlQUery"></param>
+        /// <returns></returns>
+        T UpdateCallProcura(T model, string sqlQUery);
     }
 }
