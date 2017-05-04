@@ -48,7 +48,9 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="callMeServices.cs" />
     <Compile Include="DVBootstrapper.cs" />
+    <Compile Include="DvFaceBookAPIServices.cs" />
     <Compile Include="DvEntityService.cs" />
   </ItemGroup>
   <ItemGroup>

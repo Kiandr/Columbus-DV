@@ -36,6 +36,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="callMeDm.cs" />
+    <Compile Include="NndCareGiver.cs" />
+    <Compile Include="NndEvent.cs" />
+    <Compile Include="NndPatient.cs" />
     <Compile Include="ScoreCard\Customers.cs" />
     <Compile Include="ScoreCard\CustomerServices.cs" />
     <Compile Include="DVModel.cs" />
