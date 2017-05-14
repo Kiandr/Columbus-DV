@@ -22,17 +22,7 @@ namespace NND.CA.DV.BusinessRepository
 
 
 
-
-            GetCompanies();
-            var stopHere = 10;
-
-
-
-
-            //using (var context = new WorkflowContext())
-            //{
-            //     context.WorkflowInstanceRepository().GetById(10);
-            //}
+            throw new NotImplementedException();
         }
 
 
@@ -44,17 +34,7 @@ namespace NND.CA.DV.BusinessRepository
 
 
 
-
-            using (var context = new TestDbContext())
-            {
-                context.TestDataModels.Add(new TestDataModel() {Id = (DateTime.Now).ToLocalTime().Millisecond, Name = "Keivan"});
-           
-                context.SaveChanges();
-                var test = context.TestDataModels.Find(8);
-
-
-            }
-
+            throw new NotImplementedException();
         }
 
 

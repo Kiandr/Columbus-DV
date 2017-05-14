@@ -1,6 +1,5 @@
 ﻿/* Copyright (c) 1994-2014 Sage Software, Inc.  All rights reserved. */
 
-using NND.CA.DV.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 
@@ -40,9 +39,12 @@ namespace NND.CA.DV.Web.Areas.DV
         /// <param name="context">Context object</param>
         private void RegisterRoutes(AreaRegistrationContext context)
         {
-            context.MapRoute("DV", url: "{Contoller}/{action}/{id}", 
-                defaults: new { area = "DV", controller = "DV", action = "Index", id = UrlParameter.Optional }, 
+            context.MapRoute("DV", url: "dv/{Contoller}/{action}/{id}",
+            defaults: new { area = "DV", controller = "DV", action = "Index", id = UrlParameter.Optional }, 
                 namespaces: new[] { "NND.CA.DV.Web.Controllers" });
+            //        context.MapRoute("WebApi", url: "Kian/{Contoller}/{action}/{id}",
+            //defaults: new { area = "WebApi", controller = "WebApi", action = "Index", id = UrlParameter.Optional },
+            //namespaces: new[] { "NND.CA.WebApi.Controllers" });
 
         }
 

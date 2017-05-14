@@ -2,11 +2,9 @@
 
 #region Namespace
 using System.Web.Mvc;
-using System.Web.Routing;
 using Microsoft.Practices.Unity;
 using NND.CA.Common.Model;
 using NND.CA.Common.Web;
-using NND.CA.DV.Interfaces.Services;
 using NND.CA.DV.Models;
 using NND.CA.DV.Models.ViewModels;
 using NND.CA.DV.Web.Constants;
@@ -57,7 +55,7 @@ namespace NND.CA.DV.Web.Controllers
         {
             //var model = new T();
             //service.UpdateStatus(model);
-            ControllerInternal.Test();
+           // ControllerInternal.Test();
             return PartialView(DvConstant.DvIndexPartialViewPath);
         }
 
