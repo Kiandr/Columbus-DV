@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using NND.CA.Common.Model;
-using NND.CA.Common.Web;
-using NND.CA.Common.Web.DBAccess;
 using NND.CA.DV.Interfaces.BusinessRepository;
 using NND.CA.DV.Models;
 using NND.CA.DV.Models.ViewModels;
